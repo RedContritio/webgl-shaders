@@ -1,6 +1,6 @@
 
 #ifdef GL_ES
-precision mediump float;
+precision highp float;
 #endif
 
 uniform vec2 u_resolution;
@@ -51,7 +51,7 @@ vec2 ratio(vec2 st, vec2 s) {
 // Author: Patricio Gonzalez Vivo
 
 #ifdef GL_ES
-precision mediump float;
+precision highp float;
 #endif
 
 //GLOBAL_START

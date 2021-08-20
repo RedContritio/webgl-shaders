@@ -1,6 +1,6 @@
 
 #ifdef GL_ES
-precision mediump float;
+precision highp float;
 #endif
 
 // Deps 04 09 10 19
