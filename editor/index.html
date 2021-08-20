@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+  <title>GLSL Editor</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="glsl, editor, sandbox, live-coding">
+  <link type="text/css" rel="stylesheet" href="css/glslEditor.css">
+  <script type="text/javascript" src="js/glslEditor.js"></script>
+  <script type="text/javascript" src="js/openframe/hub.js"></script>
+</head>
+
+<body>
+  <div id="glsl_editor"></div>
+  <script type="text/javascript">
+    window.glslEditor = new GlslEditor('#glsl_editor', {
+      canvas_size: 500,
+      canvas_draggable: true,
+      canvas_resizable: true,
+      theme: 'monokai',
+      watchHash: true,
+      fileDrops: true,
+      menu: true
+    });
+
+    document.body.style.backgroundColor = window.getComputedStyle(glslEditor.editor.getWrapperElement(), null).getPropertyValue('background-color');
+  </script>
+</body>
