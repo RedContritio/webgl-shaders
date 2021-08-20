@@ -91,7 +91,8 @@ float rhombSDF(vec2 st) {
 // Card 19
 //GLOBAL_START
 vec2 rotate(vec2 st, float a) {
-    st = mat2(cos(a), -sin(a), sin(a), cos(a)) * (st - .5);
+    st = mat2(cos(a), -sin(a),
+              sin(a),  cos(a)) * (st - .5);
     return st + .5;
 }
 //GLOBAL_END

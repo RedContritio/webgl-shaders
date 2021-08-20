@@ -179,7 +179,7 @@ void main() {
     float bg = starSDF(st, 16, .1);
     color += fill(bg, 1.3);
     float l = 0.;
-    for(float i = 0.; i < 8.; i++) {
+    for(float i = 0.; i < 8.; ++i) {
         vec2 xy = rotate(st, QTR_PI * i);
         xy.y -= .3;
         float tri = polySDF(xy, 3);

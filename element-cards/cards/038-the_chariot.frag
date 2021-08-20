@@ -176,7 +176,8 @@ void main() {
     st = scale(st, vec2(1.1912));
     //START
     float r1 = rectSDF(st, vec2(1.));
-    float r2 = rectSDF(rotate(st, radians(45.)), vec2(1.));
+    float r2 = rectSDF(rotate(st, radians(45.)),
+                       vec2(1.));
     float inv = step(.5, (st.x + st.y) * .5);
     inv = flip(inv, step(.5, .5 + (st.x - st.y) * .5));
     float w = .075;

@@ -75,7 +75,8 @@ float flip(float v, float pct) {
 //GLOBAL_START
 float vesicaSDF(vec2 st, float w) {
     vec2 offset = vec2(w * .5, 0.);
-    return max(circleSDF(st - offset), circleSDF(st + offset));
+    return max(circleSDF(st - offset),
+               circleSDF(st + offset));
 }
 //GLOBAL_END
 
@@ -179,7 +180,8 @@ void main() {
     st = scale(st, vec2(1.1912));
     //START
     float sdf = vesicaSDF(st, .2);
-    color += flip(fill(sdf, .5), step((st.x + st.y) * .5, .5));
+    color += flip(fill(sdf, .5),
+                  step((st.x + st.y) * .5, .5));
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

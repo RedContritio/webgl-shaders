@@ -86,7 +86,8 @@ float triSDF(vec2 st) {
 // Card 17
 //GLOBAL_START
 float rhombSDF(vec2 st) {
-    return max(triSDF(st), triSDF(vec2(st.x, 1. - st.y)));
+    return max(triSDF(st),
+               triSDF(vec2(st.x, 1. - st.y)));
 }
 //GLOBAL_END
 

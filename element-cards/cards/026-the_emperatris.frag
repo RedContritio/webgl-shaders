@@ -182,9 +182,9 @@ void main() {
     vec2 ts = vec2(st.x, 1. - st.y);
     float d2 = polySDF(ts, 5);
     color += fill(d1, .75) *
-        fill(fract(d1 * 5.), .5);
+             fill(fract(d1 * 5.), .5);
     color -= fill(d1, .6) *
-        fill(fract(d2 * 4.9), .45);
+             fill(fract(d2 * 4.9), .45);
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

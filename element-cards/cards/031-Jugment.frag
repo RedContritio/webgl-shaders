@@ -175,7 +175,8 @@ void main() {
     st = ratio(st, u_resolution);
     st = scale(st, vec2(1.1912));
     //START
-    color += flip(stroke(raysSDF(st, 28), .5, .2), fill(st.y, .5));
+    color += flip(stroke(raysSDF(st, 28), .5, .2),
+                  fill(st.y, .5));
     float rect = rectSDF(st, vec2(1.));
     color *= step(.25, rect);
     color += fill(rect, .2);

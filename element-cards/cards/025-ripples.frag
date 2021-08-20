@@ -176,7 +176,7 @@ void main() {
     st = (st - .5) * .8 + .5;
     //START
     st = rotate(st, radians(-45.)) - .08;
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 4; ++i) {
         float r = rectSDF(st, vec2(1.));
         color += stroke(r, .19, .04);
         st += .05;

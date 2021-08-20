@@ -176,7 +176,8 @@ void main() {
     st = ratio(st, u_resolution);
     st = scale(st, vec2(1.1912));
     //START
-    st = rotate(vec2(st.x, 1.0 - st.y), radians(45.));
+    st = rotate(vec2(st.x, 1.0 - st.y),
+                radians(45.));
     vec2 s = vec2(1.);
     color += fill(rectSDF(st - .025, s), .4);
     color += fill(rectSDF(st + .025, s), .4);

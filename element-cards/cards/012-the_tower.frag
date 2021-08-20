@@ -181,7 +181,8 @@ void main() {
     //START
     float rect = rectSDF(st, vec2(.5, 1.));
     float diag = (st.x + st.y) * .5;
-    color += flip(fill(rect, .6), stroke(diag, .5, .01));
+    color += flip(fill(rect, .6),
+                  stroke(diag, .5, .01));
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

@@ -130,8 +130,8 @@ float heartSDF(vec2 st) {
     float r = length(st) * 5.;
     st = normalize(st);
     return r -
-        ((st.y * pow(abs(st.x), 0.67)) /
-        (st.y + 1.5) - (2.) * st.y + 1.26);
+           ((st.y * pow(abs(st.x), 0.67)) /
+           (st.y + 1.5) - (2.) * st.y + 1.26);
 }
 //GLOBAL_END
 

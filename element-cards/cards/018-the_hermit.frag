@@ -177,7 +177,8 @@ void main() {
     st = ratio(st, u_resolution);
     st = scale(st, vec2(1.1912));
     //START
-    color += flip(fill(triSDF(st), .5), fill(rhombSDF(st), .4));
+    color += flip(fill(triSDF(st), .5),
+                  fill(rhombSDF(st), .4));
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

@@ -176,11 +176,16 @@ void main() {
     //START
     float n = 3.;
     float a = TAU / n;
-    for(float i = 0.; i < n * 2.; i++) {
+    for(float i = 0.; i < n * 2.; ++i) {
         vec2 xy = rotate(st, a * i);
         xy.y -= .09;
         float vsc = vesicaSDF(xy, .3);
-        color = mix(color + stroke(vsc, .5, .1), mix(color, bridge(color, vsc, .5, .1), step(xy.x, .5) - step(xy.y, .4)), step(3., i));
+        color = mix(color + stroke(vsc, .5, .1),
+                    mix(color,
+                        bridge(color, vsc, .5, .1),
+                        step(xy.x, .5) -
+                        step(xy.y, .4)),
+                    step(3., i));
     }
     //END
     // This just add the fake margins and deck decorations

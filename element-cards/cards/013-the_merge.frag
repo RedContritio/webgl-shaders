@@ -181,7 +181,8 @@ void main() {
     vec2 offset = vec2(.15, .0);
     float left = circleSDF(st + offset);
     float right = circleSDF(st - offset);
-    color += flip(stroke(left, .5, .05), fill(right, .525));
+    color += flip(stroke(left, .5, .05),
+                  fill(right, .525));
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

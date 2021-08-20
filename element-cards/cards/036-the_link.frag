@@ -185,7 +185,8 @@ void main() {
     color += stroke(l, .3, .1);
     color = bridge(color, r, .3, .1);
     color += fill(rhombSDF(abs(st.yx -
-        vec2(.0, .5))), .1);
+                               vec2(.0, .5))),
+                  .1);
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

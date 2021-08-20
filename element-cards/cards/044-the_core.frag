@@ -181,7 +181,7 @@ void main() {
     color += fill(star, 1.22);
     float n = 8.;
     float a = TAU / n;
-    for(float i = 0.; i < n; i++) {
+    for(float i = 0.; i < n; ++i) {
         vec2 xy = rotate(st, 0.39 + a * i);
         xy = scale(xy, vec2(1., .72));
         xy.y -= .125;

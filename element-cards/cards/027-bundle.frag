@@ -105,7 +105,8 @@ float polySDF(vec2 st, int V) {
 //GLOBAL_START
 float hexSDF(vec2 st) {
     st = abs(st * 2. - 1.);
-    return max(abs(st.y), st.x * 0.866025 + st.y * 0.5);
+    return max(abs(st.y),
+               st.x * 0.866025 + st.y * 0.5);
 }
 //GLOBAL_END
 

@@ -176,12 +176,12 @@ void main() {
     //START
     float n = 12.;
     float a = TAU / n;
-    for(float i = 0.; i < n; i++) {
+    for(float i = 0.; i < n; ++i) {
         vec2 xy = rotate(st, a * i);
         xy.y -= .189;
         float vsc = vesicaSDF(xy, .3);
         color *= 1. - stroke(vsc, .45, 0.1) *
-            step(.5, xy.y);
+                      step(.5, xy.y);
         color += stroke(vsc, .45, 0.05);
     }
     //END

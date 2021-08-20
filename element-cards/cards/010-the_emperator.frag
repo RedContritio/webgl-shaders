@@ -58,7 +58,8 @@ float fill(float x, float size) {
 //GLOBAL_START
 float rectSDF(vec2 st, vec2 s) {
     st = st * 2. - 1.;
-    return max(abs(st.x / s.x), abs(st.y / s.y));
+    return max(abs(st.x / s.x),
+               abs(st.y / s.y));
 }
 //GLOBAL_END
 

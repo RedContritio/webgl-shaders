@@ -81,7 +81,8 @@ float vesicaSDF(vec2 st, float w) {
 //GLOBAL_START
 float triSDF(vec2 st) {
     st = (st * 2. - 1.) * 2.;
-    return max(abs(st.x) * 0.866025 + st.y * 0.5, -st.y * 0.5);
+    return max(abs(st.x) * 0.866025 + st.y * 0.5,
+               -st.y * 0.5);
 }
 //GLOBAL_END
 

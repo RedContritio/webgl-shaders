@@ -182,8 +182,7 @@ void main() {
     float r2 = rectSDF(st + .15, vec2(1.));
     color += stroke(r1, .5, .05);
     color *= step(.325, r2);
-    color += stroke(r2, .325, .05) *
-        fill(r1, .525);
+    color += stroke(r2, .325, .05) * fill(r1, .525);
     color += stroke(r2, .2, .05);
     //END
     // This just add the fake margins and deck decorations

@@ -114,8 +114,10 @@ float starSDF(vec2 st, int V, float s) {
     float a = atan(st.y, st.x) / TAU;
     float seg = a * float(V);
     a = ((floor(seg) + 0.5) / float(V) +
-        mix(s, -s, step(.5, fract(seg)))) * TAU;
-    return abs(dot(vec2(cos(a), sin(a)), st));
+         mix(s, -s, step(.5, fract(seg))))
+        * TAU;
+    return abs(dot(vec2(cos(a), sin(a)),
+                   st));
 }
 //GLOBAL_END
 

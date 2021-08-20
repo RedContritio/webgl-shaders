@@ -64,7 +64,8 @@ float rectSDF(vec2 st, vec2 s) {
 //GLOBAL_START
 float crossSDF(vec2 st, float s) {
     vec2 size = vec2(.25, s);
-    return min(rectSDF(st, size.xy), rectSDF(st, size.yx));
+    return min(rectSDF(st, size.xy),
+               rectSDF(st, size.yx));
 }
 //GLOBAL_END
 

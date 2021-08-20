@@ -179,7 +179,8 @@ void main() {
     st = rotate(st, radians(-45.));
     vec2 s = vec2(1.);
     float o = .05;
-    color += flip(fill(rectSDF(st - o, s), .4), fill(rectSDF(st + o, s), .4));
+    color += flip(fill(rectSDF(st - o, s), .4),
+                  fill(rectSDF(st + o, s), .4));
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

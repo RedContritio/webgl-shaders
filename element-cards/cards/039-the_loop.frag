@@ -177,7 +177,7 @@ void main() {
     float inv = step(.5, st.y);
     st = rotate(st, radians(-45.)) - .2;
     st = mix(st, .6 - st, step(.5, inv));
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 5; ++i) {
         float r = rectSDF(st, vec2(1.));
         float s = .25;
         s -= abs(float(i) * .1 - .2);

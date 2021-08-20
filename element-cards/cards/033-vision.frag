@@ -179,10 +179,10 @@ void main() {
     float v2 = vesicaSDF(st2, .7);
     color += stroke(v2, 1., .05);
     color += fill(v2, 1.) *
-        stroke(circleSDF(st), .3, .05);
+             stroke(circleSDF(st), .3, .05);
     color += fill(raysSDF(st, 50), .2) *
-        fill(v1, 1.25) *
-        step(1., v2);
+             fill(v1, 1.25) *
+             step(1., v2);
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

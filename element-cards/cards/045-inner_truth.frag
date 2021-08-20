@@ -185,7 +185,7 @@ void main() {
     vec2 uv_f = fract(uv * grid);
     float shape = rhombSDF(uv_f);
     color += fill(shape, .9) *
-        step(.75, 1. - r);
+             step(.75, 1. - r);
     //END
     // This just add the fake margins and deck decorations
     if(texture2D(u_texTemplate, vec2(.5)).a == .0) {

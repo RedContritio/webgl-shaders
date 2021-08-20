@@ -178,7 +178,9 @@ void main() {
     st = scale(st, vec2(1.1912));
     //START
     color += fill(flowerSDF(st, 5), .25);
-    color -= step(.95, starSDF(rotate(st, 0.628), 5, .1));
+    color -= step(.95,
+                  starSDF(rotate(st, 0.628),
+                          5, .1));
     color = clamp(color, 0., 1.);
     float circle = circleSDF(st);
     color -= stroke(circle, .1, .05);

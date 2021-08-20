@@ -181,9 +181,11 @@ void main() {
     float t2 = polySDF(st + vec2(.1, .0), 3);
     float t3 = polySDF(st - vec2(.1, .0), 3);
     color += stroke(t1, s, .08) +
-        stroke(t2, s, .08) +
-        stroke(t3, s, .08);
-    float bridges = mix(mix(t1, t2, step(.5, st.y)), mix(t3, t2, step(.5, st.y)), step(.5, st.x));
+             stroke(t2, s, .08) +
+             stroke(t3, s, .08);
+    float bridges = mix(mix(t1, t2, step(.5, st.y)),
+                        mix(t3, t2, step(.5, st.y)),
+                        step(.5, st.x));
     color = bridge(color, bridges, s, .08);
     //END
     // This just add the fake margins and deck decorations
