@@ -176,7 +176,7 @@ void main() {
   st = (st - .5) * .7 + .5;
   //START
   st.x = mix(1. - st.x, st.x, step(.5, st.y));
-  vec2 o = vec2(.05, .0);
+  vec2 o = vec2(.05, 0.);
   vec2 s = vec2(1.);
   float a = radians(45.);
   float l = rectSDF(rotate(st + o, a), s);
@@ -185,10 +185,10 @@ void main() {
   color = bridge(color, r, .145, .098);
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }

@@ -177,9 +177,9 @@ void main() {
   //START
   st.y = 1. - st.y;
   float s = .25;
-  float t1 = polySDF(st + vec2(.0, .175), 3);
-  float t2 = polySDF(st + vec2(.1, .0), 3);
-  float t3 = polySDF(st - vec2(.1, .0), 3);
+  float t1 = polySDF(st + vec2(0., .175), 3);
+  float t2 = polySDF(st + vec2(.1, 0.), 3);
+  float t3 = polySDF(st - vec2(.1, 0.), 3);
   color += stroke(t1, s, .08) +
            stroke(t2, s, .08) +
            stroke(t3, s, .08);
@@ -189,10 +189,10 @@ void main() {
   color = bridge(color, bridges, s, .08);
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }

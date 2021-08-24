@@ -178,17 +178,17 @@ void main() {
   st = scale(st, vec2(1.1912));
   //START
   st.x = flip(st.x, step(.5, st.y));
-  vec2 offset = vec2(.15, .0);
+  vec2 offset = vec2(.15, 0.);
   float left = circleSDF(st + offset);
   float right = circleSDF(st - offset);
   color += stroke(left, .4, .075);
   color = bridge(color, right, .4, .075);
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }

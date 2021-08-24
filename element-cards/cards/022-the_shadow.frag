@@ -176,7 +176,7 @@ void main() {
   st = ratio(st, u_resolution);
   st = scale(st, vec2(1.1912));
   //START
-  st = rotate(vec2(st.x, 1.0 - st.y),
+  st = rotate(vec2(st.x, 1. - st.y),
               radians(45.));
   vec2 s = vec2(1.);
   color += fill(rectSDF(st - .025, s), .4);
@@ -184,10 +184,10 @@ void main() {
   color *= step(.38, rectSDF(st + .025, s));
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }

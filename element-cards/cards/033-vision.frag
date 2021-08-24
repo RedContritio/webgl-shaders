@@ -175,7 +175,7 @@ void main() {
   st = scale(st, vec2(1.1912));
   //START
   float v1 = vesicaSDF(st, .5);
-  vec2 st2 = st.yx + vec2(.04, .0);
+  vec2 st2 = st.yx + vec2(.04, 0.);
   float v2 = vesicaSDF(st2, .7);
   color += stroke(v2, 1., .05);
   color += fill(v2, 1.) *
@@ -185,10 +185,10 @@ void main() {
            step(1., v2);
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }

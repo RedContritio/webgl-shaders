@@ -178,18 +178,18 @@ void main() {
 
   st = (st - .5) * 1.2 + .5;
   //START
-  float circle = circleSDF(st - vec2(.0, .1));
-  float triangle = triSDF(st + vec2(.0, .1));
+  float circle = circleSDF(st - vec2(0., .1));
+  float triangle = triSDF(st + vec2(0., .1));
 
   color += stroke(circle, .45, .1);
   color *= step(.55, triangle);
   color += fill(triangle, .45);
   //END
   // This just add the fake margins and deck decorations
-  if(texture2D(u_texTemplate, vec2(.5)).a == .0) {
+  if(texture2D(u_texTemplate, vec2(.5)).a == 0.) {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-    // uv = ratio(uv, u_resolution);
-    // uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
+    uv = ratio(uv, u_resolution);
+    uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
   }
