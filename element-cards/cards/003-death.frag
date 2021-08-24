@@ -193,8 +193,6 @@ void main() {
     uv = scale(uv, vec2(1., u_texTemplateResolution.x / u_texTemplateResolution.y));
     vec4 colorTemplate = texture2D(u_texTemplate, uv);
     color = mix(color, colorTemplate.rgb, colorTemplate.a);
-    color *= 1. - step(.99, uv.x);
-    color *= 1. - step(.99, 1. - uv.y);
   }
 //GLOBAL_START
   gl_FragColor = vec4(color, 1.);
