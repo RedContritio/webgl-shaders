@@ -18,7 +18,7 @@ card_names = [
 ]
 card_names.sort()
 
-tex_template_path = paths["assets"] + "tarot-back.png"
+tex_template_path = paths["assets"] + "tarot-back-normalized.png"
 
 id_font_path = paths["assets"] + "Rokkitt-VariableFont_wght.ttf"
 
@@ -41,8 +41,8 @@ def DrawId(image, id_str):
 
     w, h = draw.textsize(id_msg, font=id_font)
     title_position = (
-        0.129 * text_canvas.size[0] - 0.5 * w,
-        0.0775 * text_canvas.size[1] - 0.5 * h,
+        0.141 * text_canvas.size[0] - 0.5 * w,
+        0.090 * text_canvas.size[1] - 0.5 * h,
     )
 
     draw.text(title_position, id_msg, 1, font=id_font)
@@ -70,7 +70,7 @@ def DrawCode(image, content):
 
     textsizes = [draw.textsize(code, font=code_font) for code in content]
     space_size = 2
-    code_position_x = 0.103 * im.size[0]
+    code_position_x = 0.112 * im.size[0]
     code_position_y = 0.5 * im.size[1] - 0.5 * (
         foldl(lambda s, sz: s + sz[1], 0, textsizes) + (len(textsizes) - 1) * space_size
     )

@@ -48,7 +48,7 @@ def drawTitle(image, title):
     height = max([sz[1] for sz in textsizes])
     height_small = min([sz[1] for sz in textsizes])
     title_position_x = 0.5 * im.size[0] - 0.5 * foldl(lambda s, sz: s + sz[0], 0, textsizes)
-    title_position_y = 0.91 * im.size[1] - 0.5 * height
+    title_position_y = 0.895 * im.size[1] - 0.5 * height
 
     height_offset = 0.6
     i = 0
@@ -79,7 +79,7 @@ def drawNumber(image, number):
     w, h = draw.textsize(number, font=number_font)
     number_image = Image.new("1", im.size)
     number_mask = ImageDraw.Draw(number_image)
-    number_position = (0.5 * (im.size[0] - w), 0.08 * im.size[1] - 0.5 * h)
+    number_position = (0.5 * (im.size[0] - w), 0.093 * im.size[1] - 0.5 * h)
     number_mask.text(number_position, number, 1, font=number_font)
     # number_image.save('number_mask.png')
 
