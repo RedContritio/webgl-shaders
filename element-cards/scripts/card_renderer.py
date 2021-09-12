@@ -45,11 +45,14 @@ if __name__ == "__main__":
     WINDOW_WIDTH = 896
     WINDOW_HEIGHT = 1496
 
+    # SCALE = 1
+    SCALE = 8
+
     if use_tex:
         textureImg = ImageOps.flip(Image.open(texFile))
         textureBytes = textureImg.tobytes()
         textureWidth, textureHeight = textureImg.size
-        WINDOW_WIDTH, WINDOW_HEIGHT = 8 * textureWidth, 8 * textureHeight
+        WINDOW_WIDTH, WINDOW_HEIGHT = SCALE * textureWidth, SCALE * textureHeight
 
     with open(fragFile, 'r') as f:
         FRAGMENT_SHADER = '\n'.join(f.readlines())
